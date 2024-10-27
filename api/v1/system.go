@@ -26,7 +26,7 @@ type versionResponse struct {
 // @Produce json
 // @Success 200 {object} versionResponse
 // @Router /v1/system/version [get]
-func (s systemHandler) getVersion(c *gin.Context) {
+func (h systemHandler) getVersion(c *gin.Context) {
 	c.JSON(200, versionResponse{
 		Version:    env.Version,
 		BuildTime:  env.BuildTime,
